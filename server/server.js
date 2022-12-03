@@ -2,7 +2,6 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 import mongoose from "mongoose";
-import userRoutes from "./routes/userRoutes.js"
 
 const app = express();
 
@@ -14,8 +13,6 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
     res.send("backend is working 👋");
 });
-
-app.use('/users',userRoutes);
 
 app.listen(process.env.PORT || 8000, async () => {
     console.log("Server has started");
