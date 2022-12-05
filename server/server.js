@@ -3,7 +3,7 @@ import "dotenv/config";
 import cors from "cors";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes.js"
-
+import logRoutes from "./routes/logRoutes.js"
 const app = express();
 
 app.use(express.json());
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/users',userRoutes);
-
+app.use('/logs',logRoutes);
 app.listen(process.env.PORT || 8000, async () => {
     console.log("Server has started");
     try {
